@@ -4,6 +4,7 @@ Realizar un programa que guarde la cadena de caracteres contraseña en una varia
 y pregunte al usuario por la contraseña hasta que coincida con la contraseña
 guardada.
 '''
+import string
 
 
 def checkContrasenia():
@@ -155,10 +156,18 @@ ese número de palabras para crear la lista. Por último, el programa tiene que 
 lista.
 '''
 
-def
+def creaLista():
+    lista = []
+    numPalabras = float(input("Número de palabras: "))
+    num = 0
+    while(num < numPalabras):
+        lista.append(input("Introduce: "))
+        num+=1
+    print(lista)
 
-
-
+'''
+creaLista()
+'''
 '''
 Ejercicio 9
 Realizar un programa que guarde los números que el usuario vaya introduciendo; el
@@ -166,6 +175,26 @@ criterio de finalización es cuando introduzca algo que no sea un número. Una v
 haya terminado, el usuario debe indicar un número que haya introducido y el
 ordenador deberá decirle el puesto en el que lo metió.
 '''
+
+def introduceDatos():
+    datos = []
+    index = 0
+    while(True):
+        dato = input("Introduce dato: ")
+        if dato.isnumeric():
+            datos.append(dato)
+        else:
+            print("saddasd")
+            break
+
+    numIntroducido = input("Introduce numero: ")
+    while index<len(datos):
+        if(numIntroducido==datos[index]):
+            print(datos[index],"->",index+1)
+        index+=1
+
+introduceDatos()
+
 '''
 Ejercicio 10
 El siguiente programa debería imprimir el número 2 si se le ingresan como valores
@@ -175,6 +204,7 @@ def maximo(a,b):
         return x
     else:
     return y
+    
 def minimo(a,b):
     if x<y:
         return x
@@ -184,4 +214,7 @@ def minimo(a,b):
 x=int(input("Un número: "))
 y=int(input("Otro número: "))
 print(maximo(x-3, minimo(x+2, y-5))
+'''
+'''
+Está mal lo que le pasa por parámetros. En el primero está pasando a,b y usa dentro del metodo x e y. En el otro es al revés
 '''
