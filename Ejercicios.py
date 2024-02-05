@@ -58,10 +58,11 @@ def checkNota():
             index += 1
     return modulos_repetidos
 
-# Example usage:
+
+'''
 repetidos = checkNota()
 print("Módulos a recuperar:", repetidos)
-
+'''
 
 '''
 Ejercicio 4
@@ -70,12 +71,26 @@ palíndromo o no.
 '''
 
 
+def esPalindromo():
+    palabra = input("Introduce palabra: ")
+    index = 0
+    palindromo = True
+    while index < len(palabra) // 2 and palindromo:
+        if palabra[index] != palabra[len(palabra) - index - 1]:
+            palindromo = False
+        index += 1
+    if palindromo:
+        print("Es palindromo")
+    else:
+        print("No es palindromo")
 
+'''
+esPalindromo()
+'''
 '''
 Ejercicio 5
 Realizar un programa que guarde en un diccionario los precios de las frutas de la
 tabla, pregunte al usuario por una fruta, un número de kilos y muestre por pantalla el
-
 precio de la fruta. Si la fruta no está en el diccionario debe mostrar un mensaje
 informando de ello.
 Fruta Precio
@@ -83,15 +98,55 @@ Plátano 1.35
 Manzana 0.80
 Pera 0.85
 Naranja 0.70
+'''
+def precios():
+    frutas = {"Plátano": 1.35,"Manzana": 0.80,"Pera": 0.85,"Naranja": 0.70,"Pera": 0.85
+             , "Pera":0.85, "Naranja":0.70}
+    f = input("Fruta: ")
+
+    if f in frutas:
+        numKilos = float(input("¿Cuántos kilos deseas? "))
+        for fr in frutas:
+            if f == fr:
+                print(f,"->",float(frutas[fr])*numKilos)
+                break;
+    else:
+        print("No existe la fruta introducida")
+'''
+precios()
+'''
+
+'''
 Ejercicio 6
 Realizar una función que reciba una frase y devuelva un diccionario con las palabras
 que contiene y su longitud.
 '''
+
+def checkDiccionario(frase):
+    diccionario = {}
+    palabras = frase.split(" ")
+    for palabra in palabras:
+        diccionario[palabra] = len(palabra)
+    print(diccionario)
+'''
+checkDiccionario("El mundo es un pañuelo")
+'''
+
 '''
 Ejercicio 7
 Realizar una función que pida la anchura de un triángulo y lo dibuje con caracteres
 producto (*)
 '''
+def dibujar_triangulo(anchura):
+    for i in range(1, anchura + 1):
+        print('*' * i)
+    for i in range(anchura, 0, -1):  # Empezamos desde la anchura y decrementamos hasta 1
+        print('*' * i)
+
+
+dibujar_triangulo(5)
+
+
 '''
 Ejercicio 8
 Realizar un programa que cree una lista de palabras (que puede ser vacía). El
@@ -99,6 +154,11 @@ programa debe pedir el número de palabras que van a estar en la lista y luego s
 ese número de palabras para crear la lista. Por último, el programa tiene que escribir la
 lista.
 '''
+
+def
+
+
+
 '''
 Ejercicio 9
 Realizar un programa que guarde los números que el usuario vaya introduciendo; el
